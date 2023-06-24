@@ -37,3 +37,8 @@ def login(request):
 
 def index(request):
     return render(request, "index.html", {"user": request.user})
+
+
+def logout(request):
+    logout(request)
+    return redirect("home")

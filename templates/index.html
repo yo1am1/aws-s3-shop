@@ -1,8 +1,9 @@
 {% if user.is_authenticated %}
 Hello, {{ user.username }}.
-
+    <button href="logout/">Click</button>
 {% else %}
 <h1>Hello, Anonymous User.</h1>
     <h3>Register or Log In</h3>
-    <a href="register/">Click</a>
+    <button href="register/">Click</button>
+
 {% endif %}
