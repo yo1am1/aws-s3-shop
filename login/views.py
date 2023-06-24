@@ -1,6 +1,7 @@
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def signup(request):
@@ -32,7 +33,8 @@ def login(request):
                 return redirect("home")
             else:
                 return render(request, "login.html", {"user": request.user})
-    return render(request, "login.html", {"user": request.user})
+    form = AuthenticationForm()
+    return render(request, "login.html", {"form": form, "user": request.user})
 
 
 def index(request):
@@ -41,4 +43,5 @@ def index(request):
 
 def logout(request):
     logout(request)
-    return render(redirect("home"))
+    messages.success(request, "You logged out!")
+    return redirect("index")
