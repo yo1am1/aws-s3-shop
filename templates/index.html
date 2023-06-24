@@ -1,5 +1,10 @@
 {% if user.is_authenticated %}
 Hello, {{ user.username }}.
+    <h3>Log Out</h3>
+    <form action="logout/" method="post">
+        {% csrf_token %}
+        <button type="submit" name="Logout"> Log Out </button>
+    </form>
 
 {% else %}
 <h1>Hello, Anonymous User.</h1>
