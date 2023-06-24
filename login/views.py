@@ -21,7 +21,7 @@ def signup(request):
 
 
 def index(request):
-    if request.method == "POST" and request.POST.get("logout"):
+    if request.method == "POST" and "Logout" in request.POST:
         logout(request)
         return redirect("home")
     return render(request, "index.html", {"user": request.user})
