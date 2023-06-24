@@ -1,2 +1,2 @@
-web: gunicorn homework_17.wsgi
+web: gunicorn homework_18.wsgi
 release: python manage.py migrate
