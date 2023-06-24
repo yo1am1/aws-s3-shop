@@ -41,4 +41,4 @@ def index(request):
 
 def logout(request):
     logout(request)
-    return redirect("home")
+    return render(redirect("home"))
