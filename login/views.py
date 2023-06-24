@@ -44,4 +44,4 @@ def index(request):
 def logout(request):
     logout(request)
     messages.success(request, "You logged out!")
-    return redirect("index")
+    return redirect("home")
